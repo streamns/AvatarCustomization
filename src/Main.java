@@ -47,11 +47,13 @@ public class Main extends Application{
 		nextButton = new Button("Next");
 		nextButton.setOnAction((e) -> {
 			currentScene = new Scene(root);
+			primaryStage.setScene(currentScene);
 		});
 		
 		VBox firstScene = new VBox(sceneTitle, optionLabel, maleButton, femaleButton, nextButton);
 		firstScene.setAlignment(Pos.CENTER);
 		firstScene.setPadding(new Insets(10, 10, 10, 10));
+		currentScene = new Scene(firstScene);
 		
 		primaryStage.setScene(currentScene);
 		primaryStage.show();

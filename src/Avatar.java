@@ -7,7 +7,6 @@ public class Avatar {
 	private Nose nose;
 	private Mouth mouth;
 	private Hair hair;
-	private String head.getText();
 	
 	public Avatar() {
 		gender = null;

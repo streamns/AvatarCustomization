@@ -1,4 +1,5 @@
 
+
 public class Avatar {
 	
 	private Gender gender;

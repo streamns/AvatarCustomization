@@ -1,4 +1,5 @@
 
+
 public enum Hair {
 	ONE("hair_1"),
 	TWO("hair_2"),

@@ -1,23 +1,17 @@
 
 
-public enum Head {
+public class Head {
 
-	OVAL("oval"),
-	CIRCLE("circle"),
-	RECTANGLE("rectangle"),
-	TRIANGLE("triangle"),
-	DIAMOND("diamond"),
-	HEART("heart");
+	String selectedHead;
 	
-	
-	private String text;
-	
-	Head(String text) {
-	this.text = text;
-	
+	public Head() {
+		selectedHead = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateHead(int i, String[] heads) {
+		selectedHead = heads[i];
+		//update image
 	}
+	
+	
 }

@@ -30,6 +30,14 @@ public class Avatar {
 		this.head = head;
 	}
 	
+	public String getHead() {
+		return head.getText();
+	}
+	
+	public String getEyes() {
+		return eyes.getText();
+	}
+	
 	
 
 }

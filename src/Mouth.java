@@ -1,4 +1,4 @@
 
-public class Mouth {
+public enum Mouth {
 
 }

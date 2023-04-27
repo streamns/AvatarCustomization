@@ -1,4 +1,4 @@
 
-public class Hair {
+public enum Hair {
 
 }

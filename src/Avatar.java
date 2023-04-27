@@ -7,7 +7,7 @@ public class Avatar {
 	private Nose nose;
 	private Mouth mouth;
 	private Hair hair;
-	private String head.getText();
+	
 	
 	public Avatar() {
 		gender = null;
@@ -34,10 +34,37 @@ public class Avatar {
 		return head.getText();
 	}
 	
+	public void setEyes(Eyes eyes) {
+		this.eyes = eyes;
+	}
+	
 	public String getEyes() {
 		return eyes.getText();
 	}
 	
+	public void setNose(Nose nose) {
+		this.nose = nose;
+	}
+	
+	public String getNose() {
+		return nose.getText();
+	}
+	
+	public void setMouth(Mouth mouth) {
+		this.mouth = mouth;
+	}
+	
+	public String getMouth() {
+		return mouth.getText();
+	}
+	
+	public void setHair(Hair hair) {
+		this.hair = hair;
+	}
+	
+	public String getHair() {
+		return hair.getText();
+	}
 	
 
 }

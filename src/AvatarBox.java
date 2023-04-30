@@ -10,16 +10,19 @@ public class AvatarBox {
 	private static final String IMAGE_PATH_FORMAT = "%s_%s.jpg";
 	private boolean reveal;
 	private Avatar avatar;
-	private String bodypart;
+	private String bodyPart;
 	private ArrayList<ImageView> bodyImages;
 	
-	public AvatarBox() {
+	public AvatarBox(Avatar avatar, String bodyPart) {
+		
+		avatar = this.avatar;
+		bodyPart = this.bodyPart;
 		
 		HBox bodyPartBox = new HBox(3);
 		bodyPartBox.setAlignment(Pos.CENTER);
 		bodyImages = new ArrayList<ImageView>();
 		
-		ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodypart));
+		ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart));
         imageView.setFitWidth(100);
         imageView.setPreserveRatio(true);
         bodyImages.add(imageView);

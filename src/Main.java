@@ -104,19 +104,19 @@ public class Main extends Application{
 			
 			if(avatar.getGender().equalsIgnoreCase("male")) {
 				if(button1.isSelected()) { avatar.updateHead(0); }
-				if(button1.isSelected()) { avatar.updateHead(1); }
-				if(button1.isSelected()) { avatar.updateHead(2); }
+				if(button2.isSelected()) { avatar.updateHead(1); }
+				if(button3.isSelected()) { avatar.updateHead(2); }
 			} else {
 				if(button1.isSelected()) { avatar.updateHead(3); }
-				if(button1.isSelected()) { avatar.updateHead(4); }
-				if(button1.isSelected()) { avatar.updateHead(5); }
+				if(button2.isSelected()) { avatar.updateHead(4); }
+				if(button3.isSelected()) { avatar.updateHead(5); }
 			}
 			
 			nextButton = new Button("Next");
 			nextButton.setOnAction((f) -> {
 				
 				//Eye Scene
-				System.out.println("works");
+				System.out.print(1);
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
@@ -148,19 +148,129 @@ public class Main extends Application{
 				
 				if(avatar.getGender().equalsIgnoreCase("male")) {
 					if(button1.isSelected()) { avatar.updateEyes(0); }
-					if(button1.isSelected()) { avatar.updateEyes(1); }
-					if(button1.isSelected()) { avatar.updateEyes(2); }
+					if(button2.isSelected()) { avatar.updateEyes(1); }
+					if(button3.isSelected()) { avatar.updateEyes(2); }
 				} else {
 					if(button1.isSelected()) { avatar.updateEyes(3); }
-					if(button1.isSelected()) { avatar.updateEyes(4); }
-					if(button1.isSelected()) { avatar.updateEyes(5); }
+					if(button2.isSelected()) { avatar.updateEyes(4); }
+					if(button3.isSelected()) { avatar.updateEyes(5); }
 				}
 				
 				nextButton = new Button("Next");
 				nextButton.setOnAction((g) -> {
 					System.out.print(2);
+					
+					//Nose Scene
+					sceneTitle = new Label("Noses");
+					optionLabel = new Label("Please choose the Nose of your Avatar:");
+					if(avatar.getGender().equalsIgnoreCase("Male")) {
+						option1 = "Wide";
+						option2 = "Small";
+						option3 = "Long";
+					} else {
+						option1 = "Smooth";
+						option2 = "Small";
+						option3 = "Pointed";
+					}
+					
+					group = new ToggleGroup();
+					button1 = new RadioButton(option1);
+					button2 = new RadioButton(option2);
+					button3 = new RadioButton(option3);
+					button1.setToggleGroup(group);
+					button2.setToggleGroup(group);
+					button3.setToggleGroup(group);
+					
+					pane = new GridPane();
+					pane.setAlignment(Pos.CENTER);
+					pane.setPadding(new Insets(20, 20, 20, 20));
+					pane.setHgap(20);
+					pane.add(button1, 0, 0);
+					pane.add(button2, 1, 0);
+					pane.add(button3, 2, 0);
+					
+					if(avatar.getGender().equalsIgnoreCase("male")) {
+						if(button1.isSelected()) { avatar.updateNose(0); }
+						if(button2.isSelected()) { avatar.updateNose(1); }
+						if(button3.isSelected()) { avatar.updateNose(2); }
+					} else {
+						if(button1.isSelected()) { avatar.updateNose(3); }
+						if(button2.isSelected()) { avatar.updateNose(4); }
+						if(button3.isSelected()) { avatar.updateNose(5); }
+					}
+					
+					nextButton = new Button("Next");
+					nextButton.setOnAction((h) -> {
+						System.out.print(3);
+						
+						
+						//Mouth Scene
+						sceneTitle = new Label("Mouths");
+						optionLabel = new Label("Please choose the Mouth of your Avatar:");
+						if(avatar.getGender().equalsIgnoreCase("Male")) {
+							option1 = "Normal";
+							option2 = "Smirk";
+							option3 = "Smile";
+						} else {
+							option1 = "Normal";
+							option2 = "Scowl";
+							option3 = "Smile";
+						}
+						
+						group = new ToggleGroup();
+						button1 = new RadioButton(option1);
+						button2 = new RadioButton(option2);
+						button3 = new RadioButton(option3);
+						button1.setToggleGroup(group);
+						button2.setToggleGroup(group);
+						button3.setToggleGroup(group);
+						
+						pane = new GridPane();
+						pane.setAlignment(Pos.CENTER);
+						pane.setPadding(new Insets(20, 20, 20, 20));
+						pane.setHgap(20);
+						pane.add(button1, 0, 0);
+						pane.add(button2, 1, 0);
+						pane.add(button3, 2, 0);
+						
+						if(avatar.getGender().equalsIgnoreCase("male")) {
+							if(button1.isSelected()) { avatar.updateMouth(0); }
+							if(button2.isSelected()) { avatar.updateMouth(1); }
+							if(button3.isSelected()) { avatar.updateMouth(2); }
+						} else {
+							if(button1.isSelected()) { avatar.updateMouth(3); }
+							if(button2.isSelected()) { avatar.updateMouth(4); }
+							if(button3.isSelected()) { avatar.updateMouth(5); }
+						}
+						
+						nextButton = new Button("Next");
+						nextButton.setOnAction((i) -> {
+							System.out.print(4);
+						});
+						
+						//Create VBox for Mouth scene and sets current scene to be the mouth scene
+						VBox mouthScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+						mouthScene.setAlignment(Pos.CENTER);
+						mouthScene.setPadding(new Insets(10, 10, 10, 10));
+						mouthScene.setSpacing(20);
+						currentScene = new Scene(mouthScene);
+						
+						primaryStage.setScene(currentScene);
+					
+					});
+					
+					//Create VBox for Mouth scene and sets current scene to be the mouth scene
+					VBox noseScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+					noseScene.setAlignment(Pos.CENTER);
+					noseScene.setPadding(new Insets(10, 10, 10, 10));
+					noseScene.setSpacing(20);
+					currentScene = new Scene(noseScene);
+					
+					primaryStage.setScene(currentScene);
+					
 				});
 				
+				//Create VBox for Eyes scene and sets current scene to be the eye scene
 				VBox eyeScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
 				eyeScene.setAlignment(Pos.CENTER);
 				eyeScene.setPadding(new Insets(10, 10, 10, 10));
@@ -171,6 +281,7 @@ public class Main extends Application{
 				
 			});
 			
+			//Create VBox for Heads scene and sets current scene to be the head scene
 			VBox headScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
 			headScene.setAlignment(Pos.CENTER);
 			headScene.setPadding(new Insets(10, 10, 10, 10));

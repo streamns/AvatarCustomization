@@ -1,18 +1,14 @@
 
 
-public enum Gender {
-	MALE("male"),
-	FEMALE("female");
+public class Gender {
+	String selectedGender;
 	
-
-	private String text;
-	
-	Gender(String text) {
-	this.text = text;
-	
+	public Gender() {
+		selectedGender = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateGender(int i, String[] genders) {
+		selectedGender = genders[i];
+		//update image
 	}
 }

@@ -39,7 +39,7 @@ public class Main extends Application{
 	
 	private GridPane pane;
 	
-	private Avatar avatar;
+	private Avatar avatar = new Avatar();
 	
 	private Scene currentScene;
 	
@@ -51,7 +51,7 @@ public class Main extends Application{
 		root.setPadding(new Insets(10, 10, 10, 10));
 		
 		//Creates a default Avatar object
-		avatar = new Avatar();
+		
 		
 		//Begin code for Gender scene
 		//Sets titles and labels for Gender screen

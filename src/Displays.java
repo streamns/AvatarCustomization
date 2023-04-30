@@ -9,14 +9,11 @@ public class Displays extends HBox{
 	
 	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.jpg";
 	private boolean reveal;
-	private Avatar avatar;
-	private String bodyPart;
 	private ArrayList<ImageView> bodyImages;
 	
 	public Displays(Avatar avatar, String bodyPart, Gender gender) {
 		
-		avatar = this.avatar;
-		bodyPart = this.bodyPart;
+	
 		
 		HBox bodyPartBox = new HBox(3);
 		bodyPartBox.setAlignment(Pos.CENTER);

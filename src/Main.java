@@ -115,13 +115,13 @@ public class Main extends Application{
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
 				
-				Displays eyeDisplay = new Displays(avatar, "eye");
+				Displays eyeDisplay = new Displays(avatar, "eyes");
 				eyeDisplay.setAlignment(Pos.CENTER);
 				
 				group = new ToggleGroup();
-				button1 = new RadioButton(option1);
-				button2 = new RadioButton(option2);
-				button3 = new RadioButton(option3);
+				button1 = new RadioButton();
+				button2 = new RadioButton();
+				button3 = new RadioButton();
 				button1.setToggleGroup(group);
 				button2.setToggleGroup(group);
 				button3.setToggleGroup(group);
@@ -159,9 +159,9 @@ public class Main extends Application{
 					noseDisplay.setAlignment(Pos.CENTER);
 					
 					group = new ToggleGroup();
-					button1 = new RadioButton(option1);
-					button2 = new RadioButton(option2);
-					button3 = new RadioButton(option3);
+					button1 = new RadioButton();
+					button2 = new RadioButton();
+					button3 = new RadioButton();
 					button1.setToggleGroup(group);
 					button2.setToggleGroup(group);
 					button3.setToggleGroup(group);
@@ -197,9 +197,9 @@ public class Main extends Application{
 						mouthDisplay.setAlignment(Pos.CENTER);
 						
 						group = new ToggleGroup();
-						button1 = new RadioButton(option1);
-						button2 = new RadioButton(option2);
-						button3 = new RadioButton(option3);
+						button1 = new RadioButton();
+						button2 = new RadioButton();
+						button3 = new RadioButton();
 						button1.setToggleGroup(group);
 						button2.setToggleGroup(group);
 						button3.setToggleGroup(group);
@@ -234,9 +234,9 @@ public class Main extends Application{
 							hairDisplay.setAlignment(Pos.CENTER);
 							
 							group = new ToggleGroup();
-							button1 = new RadioButton(option1);
-							button2 = new RadioButton(option2);
-							button3 = new RadioButton(option3);
+							button1 = new RadioButton();
+							button2 = new RadioButton();
+							button3 = new RadioButton();
 							button1.setToggleGroup(group);
 							button2.setToggleGroup(group);
 							button3.setToggleGroup(group);
@@ -338,6 +338,7 @@ public class Main extends Application{
 		currentScene = new Scene(firstScene);
 		
 		primaryStage.setScene(currentScene);
+		primaryStage.setTitle("Avatar Customizer");
 		primaryStage.show();	
 		
 		

@@ -12,9 +12,7 @@ public class Displays extends HBox{
 	
 	public Displays(Avatar avatar, String bodyPart) {
 		
-		super(10);
-		
-		HBox bodyPartBox = new HBox(5);
+		HBox bodyPartBox = new HBox(3);
 		bodyPartBox.setAlignment(Pos.CENTER);
 		bodyImages = new ArrayList<ImageView>();
 		

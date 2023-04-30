@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -26,6 +28,14 @@ public class Main extends Application{
 	private RadioButton button1;
 	private RadioButton button2;
 	private RadioButton button3;
+	
+	private Image image1;
+	private Image image2;
+	private Image image3;
+	
+	private ImageView img1;
+	private ImageView img2;
+	private ImageView img3;
 	
 	private GridPane pane;
 	
@@ -77,9 +87,9 @@ public class Main extends Application{
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
 			if(avatar.getGender().equalsIgnoreCase("male")) {
-				option1 = "Oval";
-				option2 = "Rectangle";
-				option3 = "Circle";
+				image1 = new Image("male_oval.png");
+				image2 = new Image("male_rectangle.png");
+				image3 = new Image("male_circle.png");
 			} else {
 				option1 = "Diamond";
 				option2 = "Heart";
@@ -87,20 +97,36 @@ public class Main extends Application{
 			}
 			
 			group = new ToggleGroup();
-			button1 = new RadioButton(option1);
-			button2 = new RadioButton(option2);
-			button3 = new RadioButton(option3);
+			button1 = new RadioButton();
+			button2 = new RadioButton();
+			button3 = new RadioButton();
 			button1.setToggleGroup(group);
 			button2.setToggleGroup(group);
 			button3.setToggleGroup(group);
 			
+			img1 = new ImageView(image1);
+			img1.setPreserveRatio(true);
+			img1.setFitHeight(50);
+			
+			img2 = new ImageView(image2);
+			img2.setPreserveRatio(true);
+			img2.setFitHeight(50);
+			
+			img3 = new ImageView(image3);
+			img3.setPreserveRatio(true);
+			img3.setFitHeight(50);
+			
 			pane = new GridPane();
 			pane.setAlignment(Pos.CENTER);
 			pane.setPadding(new Insets(20, 20, 20, 20));
-			pane.setHgap(20);
-			pane.add(button1, 0, 0);
-			pane.add(button2, 1, 0);
-			pane.add(button3, 2, 0);
+			pane.setHgap(30);
+			pane.setVgap(5);
+			pane.add(img1, 0, 0);
+			pane.add(button1, 0, 1);
+			pane.add(img2, 1, 0);
+			pane.add(button2, 1, 1);
+			pane.add(img3, 2, 0);
+			pane.add(button3, 2, 1);
 			
 			if(avatar.getGender().equalsIgnoreCase("male")) {
 				if(button1.isSelected()) { avatar.updateHead(0); }
@@ -138,10 +164,13 @@ public class Main extends Application{
 				button2.setToggleGroup(group);
 				button3.setToggleGroup(group);
 				
+				
+				
 				pane = new GridPane();
 				pane.setAlignment(Pos.CENTER);
 				pane.setPadding(new Insets(20, 20, 20, 20));
 				pane.setHgap(20);
+				
 				pane.add(button1, 0, 0);
 				pane.add(button2, 1, 0);
 				pane.add(button3, 2, 0);

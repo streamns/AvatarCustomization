@@ -36,7 +36,7 @@ public class Main extends Application{
 		root.setAlignment(Pos.CENTER);
 		root.setPadding(new Insets(10, 10, 10, 10));
 		
-		//Creates a default Avatar object
+		//Creates a default Avatar object.
 		
 		//Begin code for Gender scene
 		//Sets titles and labels for Gender screen

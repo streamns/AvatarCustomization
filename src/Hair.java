@@ -1,22 +1,15 @@
 
 
-public enum Hair {
-	ONE("hair_1"),
-	TWO("hair_2"),
-	THREE("hair_3"),
-	FOUR("hair_4"),
-	FIVE("hair_5"),
-	SIX("hair_6");
+public class Hair {
+	String selectedHair;
 	
-	
-	private String text;
-	
-	Hair(String text) {
-	this.text = text;
-	
+	public Hair() {
+		selectedHair = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateHair(int i, String[] hair) {
+		selectedHair = hair[i];
+		//update image
 	}
+	
 }

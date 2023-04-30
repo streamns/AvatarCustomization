@@ -1,22 +1,16 @@
 
 
-public enum Eyes {
-	ONE("eye_1"),
-	TWO("eye_2"),
-	THREE("eye_3"),
-	FOUR("eye_4"),
-	FIVE("eye_5"),
-	SIX("eye_6");
+public class Eyes {
 	
+	String selectedEyes;
 	
-	private String text;
-	
-	Eyes(String text) {
-	this.text = text;
-	
+	public Eyes() {
+		selectedEyes = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateEyes(int i, String[] eyes) {
+		selectedEyes = eyes[i];
+		//update image
 	}
+	
 }

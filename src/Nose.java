@@ -1,22 +1,16 @@
 
 
-public enum Nose {
-	ONE("nose_1"),
-	TWO("nose_2"),
-	THREE("nose_3"),
-	FOUR("nose_4"),
-	FIVE("nose_5"),
-	SIX("nose_6");
+public class Nose {
 	
+	String selectedNose;
 	
-	private String text;
-	
-	Nose(String text) {
-	this.text = text;
-	
+	public Nose() {
+		selectedNose = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateNose(int i, String[] noses) {
+		selectedNose = noses[i];
+		//update image
 	}
+		
 }

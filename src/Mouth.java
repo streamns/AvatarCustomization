@@ -1,22 +1,15 @@
 
 
-public enum Mouth {
-	ONE("mouth_1"),
-	TWO("mouth_2"),
-	THREE("mouth_3"),
-	FOUR("mouth_4"),
-	FIVE("mouth_5"),
-	SIX("mouth_6");
+public class Mouth {
+	String selectedMouth;
 	
-	
-	private String text;
-	
-	Mouth(String text) {
-	this.text = text;
-	
+	public Mouth() {
+		selectedMouth = "blank.png";
 	}
 	
-	public String getText() {
-		return text;
+	public void updateMouth(int i, String[] mouths) {
+		selectedMouth = mouths[i];
+		//update image
 	}
+	
 }

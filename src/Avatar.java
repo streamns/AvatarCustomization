@@ -57,7 +57,11 @@ public class Avatar {
 		this.gender = gender;
 	}
 	
-	public String getGender() {
+	public Gender getGender() {
+		return gender;
+	}
+	
+	public String getGenderText() {
 		return gender.getText();
 	}
 	

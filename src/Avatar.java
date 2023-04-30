@@ -11,14 +11,18 @@ public class Avatar {
 
 	private String[] possibleHeads = {"male_oval.png", "male_rectangle.png", "male_circle.png", 
 			"female_diamond.png", "female_heart.png", "female_triangle.png"};
-	private String[] possibleEyes = {"male_eyes_1.png", "male_eyes_2.png", "male_eyes_3.png", 
-			"female_eyes_4.png", "female_eyes_5.png", "female_eyes_6.png"};
-	private String[] possibleNoses = {"male_nose_1.png", "male_nose_2.png", "male_nose_3.png", 
-			"female_nose_4.png", "female_nose_5.png", "female_nose_6.png"};
-	private String[] possibleMouths = {"male_mouth_1.png", "male_mouth_2.png", "male_mouth_3.png", 
-			"female_mouth_4.png", "female_mouth_5.png", "female_mouth_6.png"};
-	private String[] possibleHair = {"male_hair_1.png", "male_hair_2.png", "male_hair_3.png", 
-			"female_hair_4.png", "female_hair_5.png", "female_hair_6.png"};
+	
+	private String[] possibleEyes = {"male_eyes_0.png", "male_eyes_1.png", "male_eyes_2.png", 
+			"female_eyes_3.png", "female_eyes_4.png", "female_eyes_5.png"};
+	
+	private String[] possibleNoses = {"male_nose_0.png", "male_nose_1.png", "male_nose_2.png", 
+			"female_nose_3.png", "female_nose_4.png", "female_nose_5.png"};
+	
+	private String[] possibleMouths = {"male_mouth_0.png", "male_mouth_1.png", "male_mouth_2.png", 
+			"female_mouth_3.png", "female_mouth_4.png", "female_mouth_5.png"};
+	
+	private String[] possibleHair = {"male_hair_0.png", "male_hair_1.png", "male_hair_2.png", 
+			"female_hair_3.png", "female_hair_4.png", "female_hair_5.png"};
 	
 	public Avatar() {
 		gender = null;

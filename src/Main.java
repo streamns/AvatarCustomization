@@ -76,7 +76,7 @@ public class Main extends Application{
 			//Head Scene
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
-			if(avatar.getGender().equalsIgnoreCase("Male")) {
+			if(avatar.getGender().equalsIgnoreCase("male")) {
 				option1 = "Oval";
 				option2 = "Rectangle";
 				option3 = "Circle";
@@ -120,7 +120,7 @@ public class Main extends Application{
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
-				if(avatar.getGender().equalsIgnoreCase("Male")) {
+				if(avatar.getGender().equalsIgnoreCase("male")) {
 					option1 = "Regular";
 					option2 = "Lazy";
 					option3 = "Wink";
@@ -163,7 +163,7 @@ public class Main extends Application{
 					//Nose Scene
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
-					if(avatar.getGender().equalsIgnoreCase("Male")) {
+					if(avatar.getGender().equalsIgnoreCase("male")) {
 						option1 = "Wide";
 						option2 = "Small";
 						option3 = "Long";
@@ -207,7 +207,7 @@ public class Main extends Application{
 						//Mouth Scene
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
-						if(avatar.getGender().equalsIgnoreCase("Male")) {
+						if(avatar.getGender().equalsIgnoreCase("male")) {
 							option1 = "Normal";
 							option2 = "Smirk";
 							option3 = "Smile";
@@ -246,6 +246,72 @@ public class Main extends Application{
 						nextButton = new Button("Next");
 						nextButton.setOnAction((i) -> {
 							System.out.print(4);
+							
+							//Hair Scene
+							sceneTitle = new Label("Hair");
+							optionLabel = new Label("Please choose the Hair of your Avatar:");
+							if(avatar.getGender().equalsIgnoreCase("Male")) {
+								option1 = "Front Swoop";
+								option2 = "Balding";
+								option3 = "Spiked";
+							} else {
+								option1 = "Short Bob";
+								option2 = "Straight Long";
+								option3 = "Wavy Long";
+							}
+							
+							group = new ToggleGroup();
+							button1 = new RadioButton(option1);
+							button2 = new RadioButton(option2);
+							button3 = new RadioButton(option3);
+							button1.setToggleGroup(group);
+							button2.setToggleGroup(group);
+							button3.setToggleGroup(group);
+							
+							pane = new GridPane();
+							pane.setAlignment(Pos.CENTER);
+							pane.setPadding(new Insets(20, 20, 20, 20));
+							pane.setHgap(20);
+							pane.add(button1, 0, 0);
+							pane.add(button2, 1, 0);
+							pane.add(button3, 2, 0);
+							
+							if(avatar.getGender().equalsIgnoreCase("male")) {
+								if(button1.isSelected()) { avatar.updateMouth(0); }
+								if(button2.isSelected()) { avatar.updateMouth(1); }
+								if(button3.isSelected()) { avatar.updateMouth(2); }
+							} else {
+								if(button1.isSelected()) { avatar.updateMouth(3); }
+								if(button2.isSelected()) { avatar.updateMouth(4); }
+								if(button3.isSelected()) { avatar.updateMouth(5); }
+							}
+							
+							nextButton = new Button("Next");
+							nextButton.setOnAction((j) -> {
+								System.out.print(5);
+								
+								sceneTitle = new Label("Final Avatar");
+								optionLabel = new Label("Here is your completed Avatar!");
+								
+								//Create VBox for Mouth scene and sets current scene to be the mouth scene
+								VBox finalScene = new VBox(sceneTitle, optionLabel);
+								finalScene.setAlignment(Pos.CENTER);
+								finalScene.setPadding(new Insets(10, 10, 10, 10));
+								finalScene.setSpacing(20);
+								currentScene = new Scene(finalScene);
+								
+								primaryStage.setScene(currentScene);
+								
+							});
+							
+							//Create VBox for Hair scene and sets current scene to be the hair scene
+							VBox hairScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+							hairScene.setAlignment(Pos.CENTER);
+							hairScene.setPadding(new Insets(10, 10, 10, 10));
+							hairScene.setSpacing(20);
+							currentScene = new Scene(hairScene);
+							
+							primaryStage.setScene(currentScene);
 						});
 						
 						//Create VBox for Mouth scene and sets current scene to be the mouth scene

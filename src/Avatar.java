@@ -25,7 +25,7 @@ public class Avatar {
 			"female_hair_3.png", "female_hair_4.png", "female_hair_5.png"};
 	
 	public Avatar() {
-		gender = Gender.MALE;
+		gender = null;
 		head = new Head();
 		eyes = new Eyes();
 		nose = new Nose();

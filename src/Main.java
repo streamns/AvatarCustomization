@@ -52,7 +52,6 @@ public class Main extends Application{
 		
 		//Creates a default Avatar object
 		
-		
 		//Begin code for Gender scene
 		//Sets titles and labels for Gender screen
 		sceneTitle = new Label("Gender");
@@ -63,11 +62,11 @@ public class Main extends Application{
 		Button femaleButton = new Button("Female");
 		
 		//Sets the gender of the Avatar object to the selected Gender button
-		maleButton.setOnAction((e) -> {
+		maleButton.setOnAction((a) -> {
 			avatar.setGender(Gender.MALE);
 		});
 		
-		femaleButton.setOnAction((e) -> {
+		femaleButton.setOnAction((b) -> {
 			avatar.setGender(Gender.FEMALE);
 		});
 		

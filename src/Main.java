@@ -18,10 +18,6 @@ public class Main extends Application{
 	private Label optionLabel;
 	private Label sceneTitle;
 	
-	private String option1;
-	private String option2;
-	private String option3;
-	
 	private ToggleGroup group;
 	private RadioButton button1;
 	private RadioButton button2;

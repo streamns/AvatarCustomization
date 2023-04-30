@@ -29,14 +29,6 @@ public class Main extends Application{
 	private RadioButton button2;
 	private RadioButton button3;
 	
-	private Image image1;
-	private Image image2;
-	private Image image3;
-	
-	private ImageView img1;
-	private ImageView img2;
-	private ImageView img3;
-	
 	private GridPane pane;
 	
 	private Avatar avatar = new Avatar();
@@ -63,11 +55,11 @@ public class Main extends Application{
 		
 		//Sets the gender of the Avatar object to the selected Gender button
 		maleButton.setOnAction((a) -> {
-			avatar.setGender(Gender.MALE);
+			avatar.updateGender(0);
 		});
 		
 		femaleButton.setOnAction((b) -> {
-			avatar.setGender(Gender.FEMALE);
+			avatar.updateGender(1);
 		});
 		
 		//Male and Female buttons will be positioned next to each other
@@ -85,16 +77,9 @@ public class Main extends Application{
 			//Head Scene
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
-//			if(avatar.getGender().equalsIgnoreCase("male")) {
-//				image1 = new Image("male_oval.png");
-//				image2 = new Image("male_rectangle.png");
-//				image3 = new Image("male_circle.png");
-//			} else {
-//				option1 = "Diamond";
-//				option2 = "Heart";
-//				option3 = "Triangle";
-//			}
-			Displays headDisplay = new Displays(avatar, "head", avatar.getGender());
+
+			Displays headDisplay = new Displays(avatar, "head");
+			headDisplay.setAlignment(Pos.CENTER);
 			
 			group = new ToggleGroup();
 			button1 = new RadioButton();
@@ -103,32 +88,17 @@ public class Main extends Application{
 			button1.setToggleGroup(group);
 			button2.setToggleGroup(group);
 			button3.setToggleGroup(group);
-//			
-//			img1 = new ImageView(image1);
-//			img1.setPreserveRatio(true);
-//			img1.setFitHeight(50);
-//			
-//			img2 = new ImageView(image2);
-//			img2.setPreserveRatio(true);
-//			img2.setFitHeight(50);
-//			
-//			img3 = new ImageView(image3);
-//			img3.setPreserveRatio(true);
-//			img3.setFitHeight(50);
+
 			
 			pane = new GridPane();
 			pane.setAlignment(Pos.CENTER);
 			pane.setPadding(new Insets(20, 20, 20, 20));
 			pane.setHgap(30);
-			pane.setVgap(5);
-//			pane.add(img1, 0, 0);
 			pane.add(button1, 0, 0);
-//			pane.add(img2, 1, 0);
 			pane.add(button2, 1, 0);
-//			pane.add(img3, 2, 0);
 			pane.add(button3, 2, 0);
 			
-			if(avatar.getGender() == Gender.MALE) {
+			if(avatar.getGender().equalsIgnoreCase("male")) {
 				if(button1.isSelected()) { avatar.updateHead(0); }
 				if(button2.isSelected()) { avatar.updateHead(1); }
 				if(button3.isSelected()) { avatar.updateHead(2); }
@@ -146,15 +116,9 @@ public class Main extends Application{
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
-				if(avatar.getGender() == Gender.MALE) {
-					option1 = "Regular";
-					option2 = "Lazy";
-					option3 = "Wink";
-				} else {
-					option1 = "Happy Closed";
-					option2 = "Normal";
-					option3 = "Slight Squint";
-				}
+				
+				Displays eyeDisplay = new Displays(avatar, "eye");
+				eyeDisplay.setAlignment(Pos.CENTER);
 				
 				group = new ToggleGroup();
 				button1 = new RadioButton(option1);
@@ -175,7 +139,7 @@ public class Main extends Application{
 				pane.add(button2, 1, 0);
 				pane.add(button3, 2, 0);
 				
-				if(avatar.getGender() == Gender.MALE) {
+				if(avatar.getGender().equalsIgnoreCase("male")) {
 					if(button1.isSelected()) { avatar.updateEyes(0); }
 					if(button2.isSelected()) { avatar.updateEyes(1); }
 					if(button3.isSelected()) { avatar.updateEyes(2); }
@@ -192,15 +156,9 @@ public class Main extends Application{
 					//Nose Scene
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
-					if(avatar.getGender() == Gender.MALE) {
-						option1 = "Wide";
-						option2 = "Small";
-						option3 = "Long";
-					} else {
-						option1 = "Smooth";
-						option2 = "Small";
-						option3 = "Pointed";
-					}
+					
+					Displays noseDisplay = new Displays(avatar, "nose");
+					noseDisplay.setAlignment(Pos.CENTER);
 					
 					group = new ToggleGroup();
 					button1 = new RadioButton(option1);
@@ -218,7 +176,7 @@ public class Main extends Application{
 					pane.add(button2, 1, 0);
 					pane.add(button3, 2, 0);
 					
-					if(avatar.getGender() == Gender.MALE) {
+					if(avatar.getGender().equalsIgnoreCase("male")) {
 						if(button1.isSelected()) { avatar.updateNose(0); }
 						if(button2.isSelected()) { avatar.updateNose(1); }
 						if(button3.isSelected()) { avatar.updateNose(2); }
@@ -236,15 +194,9 @@ public class Main extends Application{
 						//Mouth Scene
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
-						if(avatar.getGender() == Gender.MALE) {
-							option1 = "Normal";
-							option2 = "Smirk";
-							option3 = "Smile";
-						} else {
-							option1 = "Normal";
-							option2 = "Scowl";
-							option3 = "Smile";
-						}
+						
+						Displays mouthDisplay = new Displays(avatar, "mouth");
+						mouthDisplay.setAlignment(Pos.CENTER);
 						
 						group = new ToggleGroup();
 						button1 = new RadioButton(option1);
@@ -262,7 +214,7 @@ public class Main extends Application{
 						pane.add(button2, 1, 0);
 						pane.add(button3, 2, 0);
 						
-						if(avatar.getGender() == Gender.MALE) {
+						if(avatar.getGender().equalsIgnoreCase("male")) {
 							if(button1.isSelected()) { avatar.updateMouth(0); }
 							if(button2.isSelected()) { avatar.updateMouth(1); }
 							if(button3.isSelected()) { avatar.updateMouth(2); }
@@ -279,15 +231,9 @@ public class Main extends Application{
 							//Hair Scene
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
-							if(avatar.getGender() == Gender.MALE) {
-								option1 = "Front Swoop";
-								option2 = "Balding";
-								option3 = "Spiked";
-							} else {
-								option1 = "Short Bob";
-								option2 = "Straight Long";
-								option3 = "Wavy Long";
-							}
+							
+							Displays hairDisplay = new Displays(avatar, "hair");
+							hairDisplay.setAlignment(Pos.CENTER);
 							
 							group = new ToggleGroup();
 							button1 = new RadioButton(option1);
@@ -305,7 +251,7 @@ public class Main extends Application{
 							pane.add(button2, 1, 0);
 							pane.add(button3, 2, 0);
 							
-							if(avatar.getGender() == Gender.MALE) {
+							if(avatar.getGender().equalsIgnoreCase("male")) {
 								if(button1.isSelected()) { avatar.updateMouth(0); }
 								if(button2.isSelected()) { avatar.updateMouth(1); }
 								if(button3.isSelected()) { avatar.updateMouth(2); }
@@ -334,7 +280,7 @@ public class Main extends Application{
 							});
 							
 							//Create VBox for Hair scene and sets current scene to be the hair scene
-							VBox hairScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+							VBox hairScene = new VBox(sceneTitle, optionLabel, hairDisplay, pane, nextButton);
 							hairScene.setAlignment(Pos.CENTER);
 							hairScene.setPadding(new Insets(10, 10, 10, 10));
 							hairScene.setSpacing(20);
@@ -344,7 +290,7 @@ public class Main extends Application{
 						});
 						
 						//Create VBox for Mouth scene and sets current scene to be the mouth scene
-						VBox mouthScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+						VBox mouthScene = new VBox(sceneTitle, optionLabel, mouthDisplay, pane, nextButton);
 						mouthScene.setAlignment(Pos.CENTER);
 						mouthScene.setPadding(new Insets(10, 10, 10, 10));
 						mouthScene.setSpacing(20);
@@ -354,8 +300,8 @@ public class Main extends Application{
 					
 					});
 					
-					//Create VBox for Mouth scene and sets current scene to be the mouth scene
-					VBox noseScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+					//Create VBox for Nose scene and sets current scene to be the nose scene
+					VBox noseScene = new VBox(sceneTitle, optionLabel, noseDisplay, pane, nextButton);
 					noseScene.setAlignment(Pos.CENTER);
 					noseScene.setPadding(new Insets(10, 10, 10, 10));
 					noseScene.setSpacing(20);
@@ -366,7 +312,7 @@ public class Main extends Application{
 				});
 				
 				//Create VBox for Eyes scene and sets current scene to be the eye scene
-				VBox eyeScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+				VBox eyeScene = new VBox(sceneTitle, optionLabel, eyeDisplay, pane, nextButton);
 				eyeScene.setAlignment(Pos.CENTER);
 				eyeScene.setPadding(new Insets(10, 10, 10, 10));
 				eyeScene.setSpacing(20);
@@ -394,14 +340,7 @@ public class Main extends Application{
 		currentScene = new Scene(firstScene);
 		
 		primaryStage.setScene(currentScene);
-		primaryStage.show();
-		
-//		
-//		
-		
-		
-		
-		
+		primaryStage.show();	
 		
 		
 	}

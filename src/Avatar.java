@@ -55,6 +55,7 @@ public class Avatar {
 		hair.updateHair(i, possibleHair);
 	}
 	
+	
 	public void updateGender(int i) {
 		gender.updateGender(i, possibleGenders);
 	}

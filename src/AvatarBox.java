@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -7,17 +9,21 @@ public class AvatarBox {
 	
 	private static final String IMAGE_PATH_FORMAT = "%s_%s.jpg";
 	private boolean reveal;
+	private Avatar avatar;
+	private String bodypart;
+	private ArrayList<ImageView> bodyImages;
 	
 	public AvatarBox() {
 		
 		HBox bodyPartBox = new HBox(3);
 		bodyPartBox.setAlignment(Pos.CENTER);
+		bodyImages = new ArrayList<ImageView>();
 		
-		ImageView imageView = new ImageView(getImageForBodyPart(card));
+		ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodypart));
         imageView.setFitWidth(100);
         imageView.setPreserveRatio(true);
-        cardImages.add(imageView);
-        cardBox.getChildren().add(imageView);
+        bodyImages.add(imageView);
+        bodyPartBox.getChildren().add(imageView);
 	}
 	
 	

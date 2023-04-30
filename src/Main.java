@@ -95,7 +95,7 @@ public class Main extends Application{
 //				option2 = "Heart";
 //				option3 = "Triangle";
 //			}
-			
+			Displays headDisplay = new Displays(avatar, "head", avatar.getGender());
 			group = new ToggleGroup();
 			button1 = new RadioButton();
 			button2 = new RadioButton();

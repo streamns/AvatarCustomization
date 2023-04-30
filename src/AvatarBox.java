@@ -28,7 +28,7 @@ public class AvatarBox {
 	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart) {
-		String imagePath = reveal ? String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart) : null;
+		String imagePath = reveal ? String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart) : "blank.png";
 		return new Image(imagePath);
 		
 	}

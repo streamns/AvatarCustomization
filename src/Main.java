@@ -4,6 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -18,6 +21,13 @@ public class Main extends Application{
 	private String option1;
 	private String option2;
 	private String option3;
+	
+	private ToggleGroup group;
+	private RadioButton button1;
+	private RadioButton button2;
+	private RadioButton button3;
+	
+	private GridPane pane;
 	
 	private Avatar avatar;
 	
@@ -62,7 +72,111 @@ public class Main extends Application{
 		//then sets the stage for that scene
 		nextButton = new Button("Next");
 		nextButton.setOnAction((e) -> {
-			currentScene = new Scene(root);
+			
+			//Head Scene
+			sceneTitle = new Label("Head Shape");
+			optionLabel = new Label("Please choose the head shape of your Avatar:");
+			if(avatar.getGender().equalsIgnoreCase("Male")) {
+				option1 = "Oval";
+				option2 = "Rectangle";
+				option3 = "Circle";
+			} else {
+				option1 = "Diamond";
+				option2 = "Heart";
+				option3 = "Triangle";
+			}
+			
+			group = new ToggleGroup();
+			button1 = new RadioButton(option1);
+			button2 = new RadioButton(option2);
+			button3 = new RadioButton(option3);
+			button1.setToggleGroup(group);
+			button2.setToggleGroup(group);
+			button3.setToggleGroup(group);
+			
+			pane = new GridPane();
+			pane.setAlignment(Pos.CENTER);
+			pane.setPadding(new Insets(20, 20, 20, 20));
+			pane.setHgap(20);
+			pane.add(button1, 0, 0);
+			pane.add(button2, 1, 0);
+			pane.add(button3, 2, 0);
+			
+			if(avatar.getGender().equalsIgnoreCase("male")) {
+				if(button1.isSelected()) { avatar.updateHead(0); }
+				if(button1.isSelected()) { avatar.updateHead(1); }
+				if(button1.isSelected()) { avatar.updateHead(2); }
+			} else {
+				if(button1.isSelected()) { avatar.updateHead(3); }
+				if(button1.isSelected()) { avatar.updateHead(4); }
+				if(button1.isSelected()) { avatar.updateHead(5); }
+			}
+			
+			nextButton = new Button("Next");
+			nextButton.setOnAction((f) -> {
+				
+				//Eye Scene
+				System.out.println("works");
+				
+				sceneTitle = new Label("Eyes");
+				optionLabel = new Label("Please choose the eyes of your Avatar:");
+				if(avatar.getGender().equalsIgnoreCase("Male")) {
+					option1 = "Regular";
+					option2 = "Lazy";
+					option3 = "Wink";
+				} else {
+					option1 = "Happy Closed";
+					option2 = "Normal";
+					option3 = "Slight Squint";
+				}
+				
+				group = new ToggleGroup();
+				button1 = new RadioButton(option1);
+				button2 = new RadioButton(option2);
+				button3 = new RadioButton(option3);
+				button1.setToggleGroup(group);
+				button2.setToggleGroup(group);
+				button3.setToggleGroup(group);
+				
+				pane = new GridPane();
+				pane.setAlignment(Pos.CENTER);
+				pane.setPadding(new Insets(20, 20, 20, 20));
+				pane.setHgap(20);
+				pane.add(button1, 0, 0);
+				pane.add(button2, 1, 0);
+				pane.add(button3, 2, 0);
+				
+				if(avatar.getGender().equalsIgnoreCase("male")) {
+					if(button1.isSelected()) { avatar.updateEyes(0); }
+					if(button1.isSelected()) { avatar.updateEyes(1); }
+					if(button1.isSelected()) { avatar.updateEyes(2); }
+				} else {
+					if(button1.isSelected()) { avatar.updateEyes(3); }
+					if(button1.isSelected()) { avatar.updateEyes(4); }
+					if(button1.isSelected()) { avatar.updateEyes(5); }
+				}
+				
+				nextButton = new Button("Next");
+				nextButton.setOnAction((g) -> {
+					System.out.print(2);
+				});
+				
+				VBox eyeScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+				eyeScene.setAlignment(Pos.CENTER);
+				eyeScene.setPadding(new Insets(10, 10, 10, 10));
+				eyeScene.setSpacing(20);
+				currentScene = new Scene(eyeScene);
+				
+				primaryStage.setScene(currentScene);
+				
+			});
+			
+			VBox headScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+			headScene.setAlignment(Pos.CENTER);
+			headScene.setPadding(new Insets(10, 10, 10, 10));
+			headScene.setSpacing(20);
+			currentScene = new Scene(headScene);
+			
 			primaryStage.setScene(currentScene);
 		});
 		
@@ -77,13 +191,7 @@ public class Main extends Application{
 		primaryStage.show();
 		
 //		
-//		ToggleGroup group = new ToggleGroup();
-//		RadioButton button1 = new RadioButton(option1);
-//		RadioButton button2 = new RadioButton(option2);
-//		RadioButton button3 = new RadioButton(option3);
-//		button1.setToggleGroup(group);
-//		button2.setToggleGroup(group);
-//		button3.setToggleGroup(group);
+//		
 		
 		
 		
@@ -91,6 +199,7 @@ public class Main extends Application{
 		
 		
 	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);

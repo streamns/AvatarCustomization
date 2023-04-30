@@ -96,6 +96,7 @@ public class Main extends Application{
 //				option3 = "Triangle";
 //			}
 			Displays headDisplay = new Displays(avatar, "head", avatar.getGender());
+			
 			group = new ToggleGroup();
 			button1 = new RadioButton();
 			button2 = new RadioButton();
@@ -103,32 +104,32 @@ public class Main extends Application{
 			button1.setToggleGroup(group);
 			button2.setToggleGroup(group);
 			button3.setToggleGroup(group);
-			
-			img1 = new ImageView(image1);
-			img1.setPreserveRatio(true);
-			img1.setFitHeight(50);
-			
-			img2 = new ImageView(image2);
-			img2.setPreserveRatio(true);
-			img2.setFitHeight(50);
-			
-			img3 = new ImageView(image3);
-			img3.setPreserveRatio(true);
-			img3.setFitHeight(50);
+//			
+//			img1 = new ImageView(image1);
+//			img1.setPreserveRatio(true);
+//			img1.setFitHeight(50);
+//			
+//			img2 = new ImageView(image2);
+//			img2.setPreserveRatio(true);
+//			img2.setFitHeight(50);
+//			
+//			img3 = new ImageView(image3);
+//			img3.setPreserveRatio(true);
+//			img3.setFitHeight(50);
 			
 			pane = new GridPane();
 			pane.setAlignment(Pos.CENTER);
 			pane.setPadding(new Insets(20, 20, 20, 20));
 			pane.setHgap(30);
 			pane.setVgap(5);
-			pane.add(img1, 0, 0);
-			pane.add(button1, 0, 1);
-			pane.add(img2, 1, 0);
-			pane.add(button2, 1, 1);
-			pane.add(img3, 2, 0);
-			pane.add(button3, 2, 1);
+//			pane.add(img1, 0, 0);
+			pane.add(button1, 0, 0);
+//			pane.add(img2, 1, 0);
+			pane.add(button2, 1, 0);
+//			pane.add(img3, 2, 0);
+			pane.add(button3, 2, 0);
 			
-			if(avatar.getGender().equalsIgnoreCase("male")) {
+			if(avatar.getGender() == Gender.MALE) {
 				if(button1.isSelected()) { avatar.updateHead(0); }
 				if(button2.isSelected()) { avatar.updateHead(1); }
 				if(button3.isSelected()) { avatar.updateHead(2); }
@@ -146,7 +147,7 @@ public class Main extends Application{
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
-				if(avatar.getGender().equalsIgnoreCase("male")) {
+				if(avatar.getGender() == Gender.MALE) {
 					option1 = "Regular";
 					option2 = "Lazy";
 					option3 = "Wink";
@@ -175,7 +176,7 @@ public class Main extends Application{
 				pane.add(button2, 1, 0);
 				pane.add(button3, 2, 0);
 				
-				if(avatar.getGender().equalsIgnoreCase("male")) {
+				if(avatar.getGender() == Gender.MALE) {
 					if(button1.isSelected()) { avatar.updateEyes(0); }
 					if(button2.isSelected()) { avatar.updateEyes(1); }
 					if(button3.isSelected()) { avatar.updateEyes(2); }
@@ -192,7 +193,7 @@ public class Main extends Application{
 					//Nose Scene
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
-					if(avatar.getGender().equalsIgnoreCase("male")) {
+					if(avatar.getGender() == Gender.MALE) {
 						option1 = "Wide";
 						option2 = "Small";
 						option3 = "Long";
@@ -218,7 +219,7 @@ public class Main extends Application{
 					pane.add(button2, 1, 0);
 					pane.add(button3, 2, 0);
 					
-					if(avatar.getGender().equalsIgnoreCase("male")) {
+					if(avatar.getGender() == Gender.MALE) {
 						if(button1.isSelected()) { avatar.updateNose(0); }
 						if(button2.isSelected()) { avatar.updateNose(1); }
 						if(button3.isSelected()) { avatar.updateNose(2); }
@@ -236,7 +237,7 @@ public class Main extends Application{
 						//Mouth Scene
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
-						if(avatar.getGender().equalsIgnoreCase("male")) {
+						if(avatar.getGender() == Gender.MALE) {
 							option1 = "Normal";
 							option2 = "Smirk";
 							option3 = "Smile";
@@ -262,7 +263,7 @@ public class Main extends Application{
 						pane.add(button2, 1, 0);
 						pane.add(button3, 2, 0);
 						
-						if(avatar.getGender().equalsIgnoreCase("male")) {
+						if(avatar.getGender() == Gender.MALE) {
 							if(button1.isSelected()) { avatar.updateMouth(0); }
 							if(button2.isSelected()) { avatar.updateMouth(1); }
 							if(button3.isSelected()) { avatar.updateMouth(2); }
@@ -279,7 +280,7 @@ public class Main extends Application{
 							//Hair Scene
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
-							if(avatar.getGender().equalsIgnoreCase("Male")) {
+							if(avatar.getGender() == Gender.MALE) {
 								option1 = "Front Swoop";
 								option2 = "Balding";
 								option3 = "Spiked";
@@ -305,7 +306,7 @@ public class Main extends Application{
 							pane.add(button2, 1, 0);
 							pane.add(button3, 2, 0);
 							
-							if(avatar.getGender().equalsIgnoreCase("male")) {
+							if(avatar.getGender() == Gender.MALE) {
 								if(button1.isSelected()) { avatar.updateMouth(0); }
 								if(button2.isSelected()) { avatar.updateMouth(1); }
 								if(button3.isSelected()) { avatar.updateMouth(2); }
@@ -377,7 +378,7 @@ public class Main extends Application{
 			});
 			
 			//Create VBox for Heads scene and sets current scene to be the head scene
-			VBox headScene = new VBox(sceneTitle, optionLabel, pane, nextButton);
+			VBox headScene = new VBox(sceneTitle, optionLabel, headDisplay,  pane, nextButton);
 			headScene.setAlignment(Pos.CENTER);
 			headScene.setPadding(new Insets(10, 10, 10, 10));
 			headScene.setSpacing(20);

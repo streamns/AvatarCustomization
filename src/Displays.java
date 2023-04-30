@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
-public class Displays {
+public class Displays extends HBox{
 	
 	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.jpg";
 	private boolean reveal;
@@ -22,7 +22,7 @@ public class Displays {
 		bodyPartBox.setAlignment(Pos.CENTER);
 		bodyImages = new ArrayList<ImageView>();
 		
-		if (avatar.getGender().equalsIgnoreCase("male")) {
+		if (avatar.getGender() == Gender.MALE) {
 			for (int i = 0; i < 3; i++) {
 				ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart, i));
 		        imageView.setFitWidth(100);
@@ -44,7 +44,7 @@ public class Displays {
 	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
-		String imagePath = reveal ? String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart, i) : "blank.png";
+		String imagePath = reveal ? String.format(IMAGE_PATH_FORMAT, avatar.getGenderText(), bodyPart, i) : "blank.png";
 		return new Image(imagePath);
 		
 	}

@@ -86,15 +86,15 @@ public class Main extends Application{
 			//Head Scene
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
-			if(avatar.getGender().equalsIgnoreCase("male")) {
-				image1 = new Image("male_oval.png");
-				image2 = new Image("male_rectangle.png");
-				image3 = new Image("male_circle.png");
-			} else {
-				option1 = "Diamond";
-				option2 = "Heart";
-				option3 = "Triangle";
-			}
+//			if(avatar.getGender().equalsIgnoreCase("male")) {
+//				image1 = new Image("male_oval.png");
+//				image2 = new Image("male_rectangle.png");
+//				image3 = new Image("male_circle.png");
+//			} else {
+//				option1 = "Diamond";
+//				option2 = "Heart";
+//				option3 = "Triangle";
+//			}
 			
 			group = new ToggleGroup();
 			button1 = new RadioButton();

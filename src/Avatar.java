@@ -9,6 +9,8 @@ public class Avatar {
 	private Mouth mouth;
 	private Hair hair;
 
+	private String[] possibleGenders = {"male", "female"};
+	
 	private String[] possibleHeads = {"male_oval.png", "male_rectangle.png", "male_circle.png", 
 			"female_diamond.png", "female_heart.png", "female_triangle.png"};
 	
@@ -25,7 +27,7 @@ public class Avatar {
 			"female_hair_3.png", "female_hair_4.png", "female_hair_5.png"};
 	
 	public Avatar() {
-		gender = null;
+		gender = new Gender();
 		head = new Head();
 		eyes = new Eyes();
 		nose = new Nose();
@@ -53,18 +55,13 @@ public class Avatar {
 		hair.updateHair(i, possibleHair);
 	}
 	
-	public void setGender(Gender gender) {
-		this.gender = gender;
+	public void updateGender(int i) {
+		gender.updateGender(i, possibleGenders);
 	}
 	
-	public Gender getGender() {
-		return gender;
+	public String getGender() {
+		return gender.getGender();
 	}
-	
-	public String getGenderText() {
-		return gender.getText();
-	}
-	
 	
 	
 

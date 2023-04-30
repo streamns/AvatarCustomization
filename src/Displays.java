@@ -10,7 +10,7 @@ public class Displays extends HBox{
 	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.png";
 	private ArrayList<ImageView> bodyImages;
 	
-	public Displays(Avatar avatar, String bodyPart, Gender gender) {
+	public Displays(Avatar avatar, String bodyPart, String gender) {
 		
 		super(10);
 		
@@ -18,7 +18,7 @@ public class Displays extends HBox{
 		bodyPartBox.setAlignment(Pos.CENTER);
 		bodyImages = new ArrayList<ImageView>();
 		
-		if (avatar.getGender() == Gender.MALE) {
+		if (avatar.getGender().equalsIgnoreCase(gender)) {
 			for (int i = 0; i < 3; i++) {
 				ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart, i));
 		        imageView.setFitWidth(100);
@@ -42,7 +42,7 @@ public class Displays extends HBox{
 	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
-		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGenderText(), bodyPart, i);
+		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart, i);
 		return new Image(imagePath);
 		
 	}

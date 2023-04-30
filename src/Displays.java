@@ -7,15 +7,14 @@ import javafx.scene.layout.HBox;
 
 public class Displays extends HBox{
 	
-	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.jpg";
-	private boolean reveal;
+	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.png";
 	private ArrayList<ImageView> bodyImages;
 	
 	public Displays(Avatar avatar, String bodyPart, Gender gender) {
 		
-	
+		super(10);
 		
-		HBox bodyPartBox = new HBox(3);
+		HBox bodyPartBox = new HBox(5);
 		bodyPartBox.setAlignment(Pos.CENTER);
 		bodyImages = new ArrayList<ImageView>();
 		
@@ -36,12 +35,14 @@ public class Displays extends HBox{
 		        bodyImages.add(imageView);
 		        bodyPartBox.getChildren().add(imageView);
 			}
+			
+			this.getChildren().add(bodyPartBox);
 		}
 	}
 	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
-		String imagePath = reveal ? String.format(IMAGE_PATH_FORMAT, avatar.getGenderText(), bodyPart, i) : "blank.png";
+		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGenderText(), bodyPart, i);
 		return new Image(imagePath);
 		
 	}

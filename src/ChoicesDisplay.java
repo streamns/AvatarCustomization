@@ -40,8 +40,7 @@ public class ChoicesDisplay extends HBox{
 		}
 	}
 	
-	
-	
+
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
 		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart, i);
 		return new Image(imagePath);

@@ -30,7 +30,7 @@ public class Main extends Application{
 	
 	private Scene currentScene;
 	
-<<<<<<< HEAD
+
 	private final int SCENE_HEIGHT = 600;
 	private final int SCENE_WIDTH = 800;
 	
@@ -39,8 +39,7 @@ public class Main extends Application{
 //	private static final double CHOICE_SIZE = 30;
 //	private static final String FAMILY = "Veranda";
 	
-=======
->>>>>>> parent of 47111fd (WW)
+
 	
 	@Override
 	public void start(Stage primaryStage) {

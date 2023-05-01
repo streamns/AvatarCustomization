@@ -30,8 +30,8 @@ public class Main extends Application{
 	
 	private Scene currentScene;
 	
-	private final int SCENE_HEIGHT = 800;
-	private final int SCENE_WIDTH = 1000;
+	private final int SCENE_HEIGHT = 600;
+	private final int SCENE_WIDTH = 800;
 	
 	private static final double TITLE_SIZE = 80;
 	private static final double QUESTION_SIZE = 50;

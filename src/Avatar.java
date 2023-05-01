@@ -11,8 +11,8 @@ public class Avatar {
 
 	private String[] possibleGenders = {"male", "female"};
 	
-	private String[] possibleHeads = {"male_oval.png", "male_rectangle.png", "male_circle.png", 
-			"female_diamond.png", "female_heart.png", "female_triangle.png"};
+	private String[] possibleHeads = {"male_head_0.png", "male_head_1.png", "male_head_2.png", 
+			"female_head_3.png", "female_head_4.png", "female_head_5.png"};
 	
 	private String[] possibleEyes = {"male_eyes_0.png", "male_eyes_1.png", "male_eyes_2.png", 
 			"female_eyes_3.png", "female_eyes_4.png", "female_eyes_5.png"};

@@ -13,4 +13,7 @@ public class Eyes {
 		//update image
 	}
 	
+	public String getEyes() {
+		return selectedEyes;
+	}
 }

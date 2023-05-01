@@ -13,4 +13,7 @@ public class Nose {
 		//update image
 	}
 		
+	public String getNose() {
+		return selectedNose;
+	}
 }

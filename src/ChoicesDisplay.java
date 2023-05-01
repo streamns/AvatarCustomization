@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 
 
 public class ChoicesDisplay extends HBox{
@@ -20,7 +21,7 @@ public class ChoicesDisplay extends HBox{
 		if (avatar.getGender().equalsIgnoreCase("male")) {
 			for (int i = 0; i < 3; i++) {
 				ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart, i));
-		        imageView.setFitWidth(100);
+		        imageView.setFitWidth(50);
 		        imageView.setPreserveRatio(true);
 		        bodyImages.add(imageView);
 		        bodyPartBox.getChildren().add(imageView);
@@ -40,7 +41,8 @@ public class ChoicesDisplay extends HBox{
 		}
 	}
 	
-
+	
+	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
 		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart, i);
 		return new Image(imagePath);

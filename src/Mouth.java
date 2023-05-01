@@ -12,4 +12,7 @@ public class Mouth {
 		//update image
 	}
 	
+	public String getMouth() {
+		return selectedMouth;
+	}
 }

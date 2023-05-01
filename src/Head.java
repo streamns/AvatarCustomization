@@ -13,5 +13,8 @@ public class Head {
 		//update image
 	}
 	
+	public String getHead() {
+		return selectedHead;
+	}
 	
 }

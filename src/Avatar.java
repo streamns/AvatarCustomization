@@ -23,7 +23,7 @@ public class Avatar {
 	private String[] possibleMouths = {"male_mouth_0.png", "male_mouth_1.png", "male_mouth_2.png", 
 			"female_mouth_3.png", "female_mouth_4.png", "female_mouth_5.png"};
 	
-	private String[] possibleHair = {"male_hair_0.png", "male_hair_1.png", "male_hair_2.png", 
+	protected String[] possibleHair = {"male_hair_0.png", "male_hair_1.png", "male_hair_2.png", 
 			"female_hair_3.png", "female_hair_4.png", "female_hair_5.png"};
 	
 	public Avatar() {

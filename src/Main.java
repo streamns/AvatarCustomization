@@ -82,6 +82,8 @@ public class Main extends Application{
 			button1.setToggleGroup(group);
 			button2.setToggleGroup(group);
 			button3.setToggleGroup(group);
+			
+			button1.setSelected(true);
 
 			
 			pane = new GridPane();
@@ -106,7 +108,7 @@ public class Main extends Application{
 			nextButton.setOnAction((f) -> {
 				
 				//Eye Scene
-				System.out.println();
+				System.out.println(avatar.getHead());
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
@@ -122,7 +124,7 @@ public class Main extends Application{
 				button2.setToggleGroup(group);
 				button3.setToggleGroup(group);
 				
-				
+				button1.setSelected(true);
 				
 				pane = new GridPane();
 				pane.setAlignment(Pos.CENTER);
@@ -162,6 +164,8 @@ public class Main extends Application{
 					button2.setToggleGroup(group);
 					button3.setToggleGroup(group);
 					
+					button1.setSelected(true);
+					
 					pane = new GridPane();
 					pane.setAlignment(Pos.CENTER);
 					pane.setPadding(new Insets(20, 20, 20, 20));
@@ -200,6 +204,8 @@ public class Main extends Application{
 						button2.setToggleGroup(group);
 						button3.setToggleGroup(group);
 						
+						button1.setSelected(true);
+						
 						pane = new GridPane();
 						pane.setAlignment(Pos.CENTER);
 						pane.setPadding(new Insets(20, 20, 20, 20));
@@ -237,6 +243,8 @@ public class Main extends Application{
 							button2.setToggleGroup(group);
 							button3.setToggleGroup(group);
 							
+							button1.setSelected(true);
+							
 							pane = new GridPane();
 							pane.setAlignment(Pos.CENTER);
 							pane.setPadding(new Insets(20, 20, 20, 20));
@@ -257,7 +265,7 @@ public class Main extends Application{
 							
 							nextButton = new Button("Next");
 							nextButton.setOnAction((j) -> {
-								System.out.print(5);
+								System.out.print(avatar.getHair());
 								
 								sceneTitle = new Label("Final Avatar");
 								optionLabel = new Label("Here is your completed Avatar!");

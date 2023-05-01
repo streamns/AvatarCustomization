@@ -29,6 +29,9 @@ public class Main extends Application{
 	
 	private Scene currentScene;
 	
+	private final int SCENE_HEIGHT = 800;
+	private final int SCENE_WIDTH = 1000;
+	
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -254,13 +257,13 @@ public class Main extends Application{
 							pane.add(button3, 2, 0);
 							
 							if(avatar.getGender().equalsIgnoreCase("male")) {
-								if(button1.isSelected()) { avatar.updateMouth(0); }
-								if(button2.isSelected()) { avatar.updateMouth(1); }
-								if(button3.isSelected()) { avatar.updateMouth(2); }
+								if(button1.isSelected()) { avatar.updateHair(0); }
+								if(button2.isSelected()) { avatar.updateHair(1); }
+								if(button3.isSelected()) { avatar.updateHair(2); }
 							} else {
-								if(button1.isSelected()) { avatar.updateMouth(3); }
-								if(button2.isSelected()) { avatar.updateMouth(4); }
-								if(button3.isSelected()) { avatar.updateMouth(5); }
+								if(button1.isSelected()) { avatar.updateHair(3); }
+								if(button2.isSelected()) { avatar.updateHair(4); }
+								if(button3.isSelected()) { avatar.updateHair(5); }
 							}
 							
 							nextButton = new Button("Next");
@@ -277,7 +280,7 @@ public class Main extends Application{
 								finalScene.setAlignment(Pos.CENTER);
 								finalScene.setPadding(new Insets(10, 10, 10, 10));
 								finalScene.setSpacing(20);
-								currentScene = new Scene(finalScene);
+								currentScene = new Scene(finalScene, SCENE_WIDTH, SCENE_HEIGHT);
 								
 								primaryStage.setScene(currentScene);
 								
@@ -288,7 +291,7 @@ public class Main extends Application{
 							hairScene.setAlignment(Pos.CENTER);
 							hairScene.setPadding(new Insets(10, 10, 10, 10));
 							hairScene.setSpacing(20);
-							currentScene = new Scene(hairScene);
+							currentScene = new Scene(hairScene, SCENE_WIDTH, SCENE_HEIGHT);
 							
 							primaryStage.setScene(currentScene);
 						});
@@ -298,7 +301,7 @@ public class Main extends Application{
 						mouthScene.setAlignment(Pos.CENTER);
 						mouthScene.setPadding(new Insets(10, 10, 10, 10));
 						mouthScene.setSpacing(20);
-						currentScene = new Scene(mouthScene);
+						currentScene = new Scene(mouthScene, SCENE_WIDTH, SCENE_HEIGHT);
 						
 						primaryStage.setScene(currentScene);
 					
@@ -309,7 +312,7 @@ public class Main extends Application{
 					noseScene.setAlignment(Pos.CENTER);
 					noseScene.setPadding(new Insets(10, 10, 10, 10));
 					noseScene.setSpacing(20);
-					currentScene = new Scene(noseScene);
+					currentScene = new Scene(noseScene, SCENE_WIDTH, SCENE_HEIGHT);
 					
 					primaryStage.setScene(currentScene);
 					
@@ -320,7 +323,7 @@ public class Main extends Application{
 				eyeScene.setAlignment(Pos.CENTER);
 				eyeScene.setPadding(new Insets(10, 10, 10, 10));
 				eyeScene.setSpacing(20);
-				currentScene = new Scene(eyeScene);
+				currentScene = new Scene(eyeScene, SCENE_WIDTH, SCENE_HEIGHT);
 				
 				primaryStage.setScene(currentScene);
 				
@@ -331,7 +334,7 @@ public class Main extends Application{
 			headScene.setAlignment(Pos.CENTER);
 			headScene.setPadding(new Insets(10, 10, 10, 10));
 			headScene.setSpacing(20);
-			currentScene = new Scene(headScene);
+			currentScene = new Scene(headScene, SCENE_WIDTH, SCENE_HEIGHT);
 			
 			primaryStage.setScene(currentScene);
 		});
@@ -341,7 +344,7 @@ public class Main extends Application{
 		firstScene.setAlignment(Pos.CENTER);
 		firstScene.setPadding(new Insets(10, 10, 10, 10));
 		firstScene.setSpacing(20);
-		currentScene = new Scene(firstScene);
+		currentScene = new Scene(firstScene, SCENE_WIDTH, SCENE_HEIGHT);
 		
 		primaryStage.setScene(currentScene);
 		primaryStage.setTitle("Avatar Customizer");

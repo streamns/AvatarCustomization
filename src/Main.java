@@ -9,6 +9,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -31,6 +32,11 @@ public class Main extends Application {
 
 	private final int SCENE_HEIGHT = 800;
 	private final int SCENE_WIDTH = 1000;
+	
+	private final String FAMILY = "Times New Roman";
+	private final double TITLE = 80;
+	private final double QUESTION = 50;
+	private final double BUTTON = 30;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -44,10 +50,15 @@ public class Main extends Application {
 		// Sets titles and labels for Gender screen
 		sceneTitle = new Label("Gender");
 		optionLabel = new Label("Please choose the gender of your Avatar:");
+		sceneTitle.setFont(Font.font(FAMILY, TITLE));
+		optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 		// Creates buttons to choose male or female
 		Button maleButton = new Button("Male");
 		Button femaleButton = new Button("Female");
+		
+		maleButton.setFont(Font.font(FAMILY, BUTTON));
+		femaleButton.setFont(Font.font(FAMILY, BUTTON));
 
 		// Sets the gender of the Avatar object to the selected Gender button
 		maleButton.setOnAction((a) -> {
@@ -68,11 +79,14 @@ public class Main extends Application {
 		// button action creates a new scene that stores the Box of the next scene,
 		// then sets the stage for that scene
 		nextButton = new Button("Next");
+		nextButton.setFont(Font.font(FAMILY, BUTTON));
 		nextButton.setOnAction((e) -> {
 
 			// Head Scene
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
+			sceneTitle.setFont(Font.font(FAMILY, TITLE));
+			optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 			ChoicesDisplay headDisplay = new ChoicesDisplay(avatar, "head");
 			headDisplay.setAlignment(Pos.CENTER);
@@ -102,6 +116,7 @@ public class Main extends Application {
 			}
 
 			nextButton = new Button("Next");
+			nextButton.setFont(Font.font(FAMILY, BUTTON));
 			nextButton.setOnAction((f) -> {
 
 				// Eye Scene
@@ -109,6 +124,8 @@ public class Main extends Application {
 
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
+				sceneTitle.setFont(Font.font(FAMILY, TITLE));
+				optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 				ChoicesDisplay eyeDisplay = new ChoicesDisplay(avatar, "eyes");
 				eyeDisplay.setAlignment(Pos.CENTER);
@@ -138,12 +155,15 @@ public class Main extends Application {
 				}
 
 				nextButton = new Button("Next");
+				nextButton.setFont(Font.font(FAMILY, BUTTON));
 				nextButton.setOnAction((g) -> {
 					System.out.print(2);
 
 					// Nose Scene
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
+					sceneTitle.setFont(Font.font(FAMILY, TITLE));
+					optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 					ChoicesDisplay noseDisplay = new ChoicesDisplay(avatar, "nose");
 					noseDisplay.setAlignment(Pos.CENTER);
@@ -173,12 +193,15 @@ public class Main extends Application {
 					}
 
 					nextButton = new Button("Next");
+					nextButton.setFont(Font.font(FAMILY, BUTTON));
 					nextButton.setOnAction((h) -> {
 						System.out.print(3);
 
 						// Mouth Scene
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
+						sceneTitle.setFont(Font.font(FAMILY, TITLE));
+						optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 						ChoicesDisplay mouthDisplay = new ChoicesDisplay(avatar, "mouth");
 						mouthDisplay.setAlignment(Pos.CENTER);
@@ -208,12 +231,15 @@ public class Main extends Application {
 						}
 
 						nextButton = new Button("Next");
+						nextButton.setFont(Font.font(FAMILY, BUTTON));
 						nextButton.setOnAction((i) -> {
 							System.out.print(4);
 
 							// Hair Scene
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
+							sceneTitle.setFont(Font.font(FAMILY, TITLE));
+							optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 							ChoicesDisplay hairDisplay = new ChoicesDisplay(avatar, "hair");
 							hairDisplay.setAlignment(Pos.CENTER);
@@ -243,11 +269,14 @@ public class Main extends Application {
 							}
 
 							nextButton = new Button("Next");
+							nextButton.setFont(Font.font(FAMILY, BUTTON));
 							nextButton.setOnAction((j) -> {
 								System.out.print(avatar.getHair());
 
 								sceneTitle = new Label("Final Avatar");
 								optionLabel = new Label("Here is your completed Avatar!");
+								sceneTitle.setFont(Font.font(FAMILY, TITLE));
+								optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
 								AvatarDisplay finalAvatar = new AvatarDisplay(avatar);
 
@@ -332,12 +361,15 @@ public class Main extends Application {
 
 		group = new ToggleGroup();
 		button1 = new RadioButton();
-		button1.setSelected(true);
 		button2 = new RadioButton();
 		button3 = new RadioButton();
 		button1.setToggleGroup(group);
 		button2.setToggleGroup(group);
 		button3.setToggleGroup(group);
+		
+		button1.setFont(Font.font(BUTTON));
+		button2.setFont(Font.font(BUTTON));
+		button3.setFont(Font.font(BUTTON));
 
 		pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);

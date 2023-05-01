@@ -20,7 +20,7 @@ public class ChoicesDisplay extends HBox{
 		if (avatar.getGender().equalsIgnoreCase("male")) {
 			for (int i = 0; i < 3; i++) {
 				ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart, i));
-		        imageView.setFitWidth(50);
+		        imageView.setFitWidth(100);
 		        imageView.setPreserveRatio(true);
 		        bodyImages.add(imageView);
 		        bodyPartBox.getChildren().add(imageView);
@@ -30,7 +30,7 @@ public class ChoicesDisplay extends HBox{
 		else {
 			for (int i = 3; i < 6; i++) {
 				ImageView imageView = new ImageView(getImageForBodyPart(avatar, bodyPart, i));
-		        imageView.setFitWidth(50);
+		        imageView.setFitWidth(100);
 		        imageView.setPreserveRatio(true);
 		        bodyImages.add(imageView);
 		        bodyPartBox.getChildren().add(imageView);

@@ -35,6 +35,10 @@ public class Avatar {
 		hair = new Hair();
 	}
 	
+	public void updateGender(int i) {
+		gender.updateGender(i, possibleGenders);
+	}
+	
 	public void updateHead(int i) {
 		head.updateHead(i, possibleHeads);
 	}
@@ -55,15 +59,27 @@ public class Avatar {
 		hair.updateHair(i, possibleHair);
 	}
 	
-	
-	public void updateGender(int i) {
-		gender.updateGender(i, possibleGenders);
-	}
-	
 	public String getGender() {
 		return gender.getGender();
 	}
 	
+	public String getHead() {
+		return head.getHead();
+	}
 	
-
+	public String getEyes() {
+		return eyes.getEyes();
+	}
+	
+	public String getNose() {
+		return nose.getNose();
+	}
+	
+	public String getMouth() {
+		return mouth.getMouth();
+	}
+	
+	public String getHair() {
+		return hair.getHair();
+	}
 }

@@ -4,13 +4,15 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 
-public class Displays extends HBox{
+
+public class ChoicesDisplay extends HBox{
 	
 	private static final String IMAGE_PATH_FORMAT = "%s_%s_%s.png";
 	private ArrayList<ImageView> bodyImages;
 	
-	public Displays(Avatar avatar, String bodyPart) {
+	public ChoicesDisplay(Avatar avatar, String bodyPart) {
 		
 		HBox bodyPartBox = new HBox(3);
 		bodyPartBox.setAlignment(Pos.CENTER);
@@ -39,12 +41,6 @@ public class Displays extends HBox{
 		}
 	}
 	
-	public Displays(Avatar avatar) {
-		
-		
-		
-		
-	}
 	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {

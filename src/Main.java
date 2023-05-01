@@ -72,7 +72,7 @@ public class Main extends Application{
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
 
-			Displays headDisplay = new Displays(avatar, "head");
+			ChoicesDisplay headDisplay = new ChoicesDisplay(avatar, "head");
 			headDisplay.setAlignment(Pos.CENTER);
 			
 			group = new ToggleGroup();
@@ -111,7 +111,7 @@ public class Main extends Application{
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
 				
-				Displays eyeDisplay = new Displays(avatar, "eyes");
+				ChoicesDisplay eyeDisplay = new ChoicesDisplay(avatar, "eyes");
 				eyeDisplay.setAlignment(Pos.CENTER);
 				
 				group = new ToggleGroup();
@@ -151,7 +151,7 @@ public class Main extends Application{
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
 					
-					Displays noseDisplay = new Displays(avatar, "nose");
+					ChoicesDisplay noseDisplay = new ChoicesDisplay(avatar, "nose");
 					noseDisplay.setAlignment(Pos.CENTER);
 					
 					group = new ToggleGroup();
@@ -189,7 +189,7 @@ public class Main extends Application{
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
 						
-						Displays mouthDisplay = new Displays(avatar, "mouth");
+						ChoicesDisplay mouthDisplay = new ChoicesDisplay(avatar, "mouth");
 						mouthDisplay.setAlignment(Pos.CENTER);
 						
 						group = new ToggleGroup();
@@ -226,7 +226,7 @@ public class Main extends Application{
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
 							
-							Displays hairDisplay = new Displays(avatar, "hair");
+							ChoicesDisplay hairDisplay = new ChoicesDisplay(avatar, "hair");
 							hairDisplay.setAlignment(Pos.CENTER);
 							
 							group = new ToggleGroup();
@@ -262,8 +262,10 @@ public class Main extends Application{
 								sceneTitle = new Label("Final Avatar");
 								optionLabel = new Label("Here is your completed Avatar!");
 								
+								AvatarDisplay finalAvatar = new AvatarDisplay(avatar);
+								
 								//Create VBox for Mouth scene and sets current scene to be the mouth scene
-								VBox finalScene = new VBox(sceneTitle, optionLabel);
+								VBox finalScene = new VBox(sceneTitle, optionLabel, finalAvatar);
 								finalScene.setAlignment(Pos.CENTER);
 								finalScene.setPadding(new Insets(10, 10, 10, 10));
 								finalScene.setSpacing(20);

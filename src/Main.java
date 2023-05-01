@@ -106,7 +106,7 @@ public class Main extends Application{
 			nextButton.setOnAction((f) -> {
 				
 				//Eye Scene
-				System.out.print(1);
+				System.out.println();
 				
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");

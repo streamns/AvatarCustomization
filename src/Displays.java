@@ -39,6 +39,13 @@ public class Displays extends HBox{
 		}
 	}
 	
+	public Displays(Avatar avatar) {
+		
+		
+		
+		
+	}
+	
 	
 	private Image getImageForBodyPart(Avatar avatar, String bodyPart, int i) {
 		String imagePath = String.format(IMAGE_PATH_FORMAT, avatar.getGender(), bodyPart, i);

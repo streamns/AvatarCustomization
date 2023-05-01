@@ -12,4 +12,7 @@ public class Hair {
 		//update image
 	}
 	
+	public String getHair() {
+		return selectedHair;
+	}
 }

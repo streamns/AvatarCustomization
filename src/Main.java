@@ -11,7 +11,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author sarahvicchiollo, Nathan Stream
+ * @version 4.30.2023
+ * 
+ * This program runs the Graphic User Interface to create an Avatar based on the User's choices
+ *
+ */
 public class Main extends Application {
 
 	private Button nextButton;
@@ -40,11 +47,6 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		VBox root = new VBox(10);
-		root.setAlignment(Pos.CENTER);
-		root.setPadding(new Insets(10, 10, 10, 10));
-
-		// Creates a default Avatar object.
 
 		// Begin code for Gender scene
 		// Sets titles and labels for Gender screen
@@ -83,16 +85,22 @@ public class Main extends Application {
 		nextButton.setOnAction((e) -> {
 
 			// Head Scene
+			
+			//Sets the scene title and question to relate to head shape
+			//Formats the text accordingly
 			sceneTitle = new Label("Head Shape");
 			optionLabel = new Label("Please choose the head shape of your Avatar:");
 			sceneTitle.setFont(Font.font(FAMILY, TITLE));
 			optionLabel.setFont(Font.font(FAMILY, QUESTION));
-
+			
+			//Creates an image display with the different head options (relative to gender)
 			ChoicesDisplay headDisplay = new ChoicesDisplay(avatar, "head");
 			headDisplay.setAlignment(Pos.CENTER);
-
+			
+			//Creates option buttons
 			optionButtons();
-
+			
+			//Sets the Head variable of avatar based on the button chosen and the gender of avatar
 			if (avatar.getGender().equalsIgnoreCase("male")) {
 				group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 					if (newToggle == button1) {
@@ -114,24 +122,31 @@ public class Main extends Application {
 					}
 				});
 			}
-
+			
+			//Creates and formats a next button
+			//Next button will create and display the next scene
 			nextButton = new Button("Next");
 			nextButton.setFont(Font.font(FAMILY, BUTTON));
 			nextButton.setOnAction((f) -> {
 
 				// Eye Scene
 
+				//Sets the scene title and question to relate to eyes
+				//Formats the text accordingly
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
 				sceneTitle.setFont(Font.font(FAMILY, TITLE));
 				optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
+				//Creates an image display with the different eye options (relative to gender)
 				ChoicesDisplay eyeDisplay = new ChoicesDisplay(avatar, "eyes");
 				eyeDisplay.setAlignment(Pos.CENTER);
 
+				//Creates option buttons
 				optionButtons();
-
-				if (avatar.getGender().equalsIgnoreCase("male")) {
+				
+				//Sets the Eye variable of avatar based on the button chosen and the gender of avatar
+				if (avatar.getGender().equalsIgnoreCase("male")) { //for male
 					group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 						if (newToggle == button1) {
 							avatar.updateEyes(0);
@@ -141,7 +156,7 @@ public class Main extends Application {
 							avatar.updateEyes(2);
 						}
 					});
-				} else {
+				} else { //for female
 					group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 						if (newToggle == button1) {
 							avatar.updateEyes(3);
@@ -152,24 +167,31 @@ public class Main extends Application {
 						}
 					});
 				}
-
+				
+				//Creates and formats a next button
+				//Next button will create and display the next scene
 				nextButton = new Button("Next");
 				nextButton.setFont(Font.font(FAMILY, BUTTON));
 				nextButton.setOnAction((g) -> {
 					
 					// Nose Scene
 					
+					//Sets the scene title and question to relate to nose
+					//Formats the text accordingly
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
 					sceneTitle.setFont(Font.font(FAMILY, TITLE));
 					optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
+					//Creates an image display with the different nose options (relative to gender)
 					ChoicesDisplay noseDisplay = new ChoicesDisplay(avatar, "nose");
 					noseDisplay.setAlignment(Pos.CENTER);
 
+					//Creates option buttons
 					optionButtons();
 
-					if (avatar.getGender().equalsIgnoreCase("male")) {
+					//Sets the Nose variable of avatar based on the button chosen and the gender of avatar
+					if (avatar.getGender().equalsIgnoreCase("male")) { //for male
 						group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 							if (newToggle == button1) {
 								avatar.updateNose(0);
@@ -179,7 +201,7 @@ public class Main extends Application {
 								avatar.updateNose(2);
 							}
 						});
-					} else {
+					} else { //for female
 						group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 							if (newToggle == button1) {
 								avatar.updateNose(3);
@@ -191,23 +213,30 @@ public class Main extends Application {
 						});
 					}
 
+					//Creates and formats a next button
+					//Next button will create and display the next scene
 					nextButton = new Button("Next");
 					nextButton.setFont(Font.font(FAMILY, BUTTON));
 					nextButton.setOnAction((h) -> {
 
 						// Mouth Scene
 						
+						//Sets the scene title and question to relate to mouth
+						//Formats the text accordingly
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
 						sceneTitle.setFont(Font.font(FAMILY, TITLE));
 						optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
+						//Creates an image display with the different mouth options (relative to gender)
 						ChoicesDisplay mouthDisplay = new ChoicesDisplay(avatar, "mouth");
 						mouthDisplay.setAlignment(Pos.CENTER);
 
+						//Creates option buttons
 						optionButtons();
 
-						if (avatar.getGender().equalsIgnoreCase("male")) {
+						//Sets the Mouth variable of avatar based on the button chosen and the gender of avatar
+						if (avatar.getGender().equalsIgnoreCase("male")) { //for male
 							group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 								if (newToggle == button1) {
 									avatar.updateMouth(0);
@@ -217,7 +246,7 @@ public class Main extends Application {
 									avatar.updateMouth(2);
 								}
 							});
-						} else {
+						} else { //for female
 							group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 								if (newToggle == button1) {
 									avatar.updateMouth(3);
@@ -229,23 +258,30 @@ public class Main extends Application {
 							});
 						}
 
+						//Creates and formats a next button
+						//Next button will create and display the next scene
 						nextButton = new Button("Next");
 						nextButton.setFont(Font.font(FAMILY, BUTTON));
 						nextButton.setOnAction((i) -> {
 
 							// Hair Scene
 							
+							//Sets the scene title and question to relate to hair
+							//Formats the text accordingly
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
 							sceneTitle.setFont(Font.font(FAMILY, TITLE));
 							optionLabel.setFont(Font.font(FAMILY, QUESTION));
 
+							//Creates an image display with the different hair options (relative to gender)
 							ChoicesDisplay hairDisplay = new ChoicesDisplay(avatar, "hair");
 							hairDisplay.setAlignment(Pos.CENTER);
 
+							//Creates option buttons
 							optionButtons();
 
-							if (avatar.getGender().equalsIgnoreCase("male")) {
+							//Sets the Hair variable of avatar based on the button chosen and the gender of avatar
+							if (avatar.getGender().equalsIgnoreCase("male")) { //for male
 								group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 									if (newToggle == button1) {
 										avatar.updateHair(0);
@@ -255,7 +291,7 @@ public class Main extends Application {
 										avatar.updateHair(2);
 									}
 								});
-							} else {
+							} else { //for female
 								group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
 									if (newToggle == button1) {
 										avatar.updateHair(3);
@@ -267,12 +303,16 @@ public class Main extends Application {
 								});
 							}
 
+							//Creates and formats a next button
+							//Next button will create and display the next scene
 							nextButton = new Button("Next");
 							nextButton.setFont(Font.font(FAMILY, BUTTON));
 							nextButton.setOnAction((j) -> {
 
 								//Final Avatar Scene
 								
+								//Sets the scene title and question to relate to the final avatar display
+								//Formats the text accordingly
 								sceneTitle = new Label("Final Avatar");
 								optionLabel = new Label("Here is your completed Avatar!");
 								sceneTitle.setFont(Font.font(FAMILY, TITLE));
@@ -357,6 +397,9 @@ public class Main extends Application {
 
 	}
 
+	/**
+	 * Creates a group of Radio Buttons and formats them within a Grid Pane
+	 */
 	public void optionButtons() {
 
 		group = new ToggleGroup();

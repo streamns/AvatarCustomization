@@ -120,7 +120,6 @@ public class Main extends Application {
 			nextButton.setOnAction((f) -> {
 
 				// Eye Scene
-				System.out.println(avatar.getHead());
 
 				sceneTitle = new Label("Eyes");
 				optionLabel = new Label("Please choose the eyes of your Avatar:");
@@ -157,9 +156,9 @@ public class Main extends Application {
 				nextButton = new Button("Next");
 				nextButton.setFont(Font.font(FAMILY, BUTTON));
 				nextButton.setOnAction((g) -> {
-					System.out.print(2);
-
+					
 					// Nose Scene
+					
 					sceneTitle = new Label("Noses");
 					optionLabel = new Label("Please choose the Nose of your Avatar:");
 					sceneTitle.setFont(Font.font(FAMILY, TITLE));
@@ -195,9 +194,9 @@ public class Main extends Application {
 					nextButton = new Button("Next");
 					nextButton.setFont(Font.font(FAMILY, BUTTON));
 					nextButton.setOnAction((h) -> {
-						System.out.print(3);
 
 						// Mouth Scene
+						
 						sceneTitle = new Label("Mouths");
 						optionLabel = new Label("Please choose the Mouth of your Avatar:");
 						sceneTitle.setFont(Font.font(FAMILY, TITLE));
@@ -233,9 +232,9 @@ public class Main extends Application {
 						nextButton = new Button("Next");
 						nextButton.setFont(Font.font(FAMILY, BUTTON));
 						nextButton.setOnAction((i) -> {
-							System.out.print(4);
 
 							// Hair Scene
+							
 							sceneTitle = new Label("Hair");
 							optionLabel = new Label("Please choose the Hair of your Avatar:");
 							sceneTitle.setFont(Font.font(FAMILY, TITLE));
@@ -271,8 +270,9 @@ public class Main extends Application {
 							nextButton = new Button("Next");
 							nextButton.setFont(Font.font(FAMILY, BUTTON));
 							nextButton.setOnAction((j) -> {
-								System.out.print(avatar.getHair());
 
+								//Final Avatar Scene
+								
 								sceneTitle = new Label("Final Avatar");
 								optionLabel = new Label("Here is your completed Avatar!");
 								sceneTitle.setFont(Font.font(FAMILY, TITLE));
@@ -280,7 +280,7 @@ public class Main extends Application {
 
 								AvatarDisplay finalAvatar = new AvatarDisplay(avatar);
 
-								// Create VBox for Mouth scene and sets current scene to be the mouth scene
+								// Create VBox for Final Avatar Display scene and sets current scene to be the final avatar display scene
 								VBox finalScene = new VBox(sceneTitle, optionLabel, finalAvatar);
 								finalScene.setAlignment(Pos.CENTER);
 								finalScene.setPadding(new Insets(10, 10, 10, 10));

@@ -19,12 +19,12 @@ public class Main extends Application{
 	private Label optionLabel;
 	private Label sceneTitle;
 	
-	private static ToggleGroup group;
-	private static RadioButton button1;
-	private static RadioButton button2;
-	private static RadioButton button3;
+	private  ToggleGroup group;
+	private  RadioButton button1;
+	private  RadioButton button2;
+	private  RadioButton button3;
 	
-	private static GridPane pane;
+	private GridPane pane;
 	
 	private Avatar avatar = new Avatar();
 	
@@ -54,35 +54,47 @@ public class Main extends Application{
 		sceneTitle.setFont(Font.font(FAMILY, TITLE_SIZE));
 		optionLabel.setFont(Font.font(FAMILY, QUESTION_SIZE));
 		
-		
-		//Creates buttons to choose male or female
-		ToggleGroup gender = new ToggleGroup();
-		RadioButton female = new RadioButton("Female");
-		RadioButton male = new RadioButton("Male");
-		female.setToggleGroup(gender);
-		male.setToggleGroup(gender);
-		
-		female.setFont(Font.font(FAMILY, CHOICE_SIZE));
-		male.setFont(Font.font(FAMILY, CHOICE_SIZE));
-		
-		male.setSelected(true);
-		
-		GridPane genderPane = new GridPane();
-		genderPane.setAlignment(Pos.CENTER);
-		genderPane.setPadding(new Insets(20, 20, 20, 20));
-		genderPane.setHgap(20);
-		genderPane.add(male, 0, 0);
-		genderPane.add(female, 1, 0);
+		Button maleButton = new Button("Male");
+		Button femaleButton = new Button("Female");
 		
 		//Sets the gender of the Avatar object to the selected Gender button
-		if(male.isSelected()) { avatar.updateGender(0); }
-		if(female.isSelected()) { avatar.updateGender(1); }
+		maleButton.setOnAction((a) -> {
+			avatar.updateGender(0);
+		});
+		
+		femaleButton.setOnAction((b) -> {
+			avatar.updateGender(1);
+		});
 		
 		//Male and Female buttons will be positioned next to each other
-		HBox genderButtons = new HBox(genderPane);
+		HBox genderButtons = new HBox(maleButton, femaleButton);
 		genderButtons.setAlignment(Pos.CENTER);
 		genderButtons.setPadding(new Insets(5, 5, 5, 5));
 		genderButtons.setSpacing(30);
+
+		//Creates buttons to choose male or female
+//		ToggleGroup gender = new ToggleGroup();
+//		RadioButton female = new RadioButton("Female");
+//		RadioButton male = new RadioButton("Male");
+//		female.setToggleGroup(gender);
+//		male.setToggleGroup(gender);
+		
+//		female.setFont(Font.font(FAMILY, CHOICE_SIZE));
+//		male.setFont(Font.font(FAMILY, CHOICE_SIZE));
+		
+//		male.setSelected(true);
+//		
+//		GridPane genderPane = new GridPane();
+//		genderPane.setAlignment(Pos.CENTER);
+//		genderPane.setPadding(new Insets(20, 20, 20, 20));
+//		genderPane.setHgap(20);
+//		genderPane.add(male, 0, 0);
+//		genderPane.add(female, 1, 0);
+//		
+//		//Sets the gender of the Avatar object to the selected Gender button
+//		if(male.isSelected()) { avatar.updateGender(0); }
+//		if(female.isSelected()) { avatar.updateGender(1); }
+//		
 		
 		//Next button to allow the user to enter the next scene (next choice)
 		//button action creates a new scene that stores the Box of the next scene, 
@@ -100,7 +112,28 @@ public class Main extends Application{
 			ChoicesDisplay headDisplay = new ChoicesDisplay(avatar, "head");
 			headDisplay.setAlignment(Pos.CENTER);
 			
-			createOptionButtons();
+			group = new ToggleGroup();
+			button1 = new RadioButton();
+			button2 = new RadioButton();
+			button3 = new RadioButton();
+			button1.setToggleGroup(group);
+			button2.setToggleGroup(group);
+			button3.setToggleGroup(group);
+			
+			button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+			button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+			button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+			
+			button1.setSelected(true);
+			
+			pane = new GridPane();
+			pane.setAlignment(Pos.CENTER);
+			pane.setPadding(new Insets(20, 20, 20, 20));
+			pane.setHgap(100);
+			pane.add(button1, 0, 0);
+			pane.add(button2, 1, 0);
+			pane.add(button3, 2, 0);
+			
 			
 			if(avatar.getGender().equalsIgnoreCase("male")) {
 				if(button1.isSelected()) { avatar.updateHead(0); }
@@ -127,7 +160,27 @@ public class Main extends Application{
 				ChoicesDisplay eyeDisplay = new ChoicesDisplay(avatar, "eyes");
 				eyeDisplay.setAlignment(Pos.CENTER);
 				
-				createOptionButtons();
+				group = new ToggleGroup();
+				button1 = new RadioButton();
+				button2 = new RadioButton();
+				button3 = new RadioButton();
+				button1.setToggleGroup(group);
+				button2.setToggleGroup(group);
+				button3.setToggleGroup(group);
+				
+				button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+				button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+				button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+				
+				button1.setSelected(true);
+				
+				pane = new GridPane();
+				pane.setAlignment(Pos.CENTER);
+				pane.setPadding(new Insets(20, 20, 20, 20));
+				pane.setHgap(100);
+				pane.add(button1, 0, 0);
+				pane.add(button2, 1, 0);
+				pane.add(button3, 2, 0);
 				
 				if(avatar.getGender().equalsIgnoreCase("male")) {
 					if(button1.isSelected()) { avatar.updateEyes(0); }
@@ -153,7 +206,27 @@ public class Main extends Application{
 					ChoicesDisplay noseDisplay = new ChoicesDisplay(avatar, "nose");
 					noseDisplay.setAlignment(Pos.CENTER);
 					
-					createOptionButtons();
+					group = new ToggleGroup();
+					button1 = new RadioButton();
+					button2 = new RadioButton();
+					button3 = new RadioButton();
+					button1.setToggleGroup(group);
+					button2.setToggleGroup(group);
+					button3.setToggleGroup(group);
+					
+					button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+					button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+					button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+					
+					button1.setSelected(true);
+					
+					pane = new GridPane();
+					pane.setAlignment(Pos.CENTER);
+					pane.setPadding(new Insets(20, 20, 20, 20));
+					pane.setHgap(100);
+					pane.add(button1, 0, 0);
+					pane.add(button2, 1, 0);
+					pane.add(button3, 2, 0);
 					
 					if(avatar.getGender().equalsIgnoreCase("male")) {
 						if(button1.isSelected()) { avatar.updateNose(0); }
@@ -180,7 +253,27 @@ public class Main extends Application{
 						ChoicesDisplay mouthDisplay = new ChoicesDisplay(avatar, "mouth");
 						mouthDisplay.setAlignment(Pos.CENTER);
 						
-						createOptionButtons();
+						group = new ToggleGroup();
+						button1 = new RadioButton();
+						button2 = new RadioButton();
+						button3 = new RadioButton();
+						button1.setToggleGroup(group);
+						button2.setToggleGroup(group);
+						button3.setToggleGroup(group);
+						
+						button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+						button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+						button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+						
+						button1.setSelected(true);
+						
+						pane = new GridPane();
+						pane.setAlignment(Pos.CENTER);
+						pane.setPadding(new Insets(20, 20, 20, 20));
+						pane.setHgap(100);
+						pane.add(button1, 0, 0);
+						pane.add(button2, 1, 0);
+						pane.add(button3, 2, 0);
 						
 						if(avatar.getGender().equalsIgnoreCase("male")) {
 							if(button1.isSelected()) { avatar.updateMouth(0); }
@@ -206,7 +299,27 @@ public class Main extends Application{
 							ChoicesDisplay hairDisplay = new ChoicesDisplay(avatar, "hair");
 							hairDisplay.setAlignment(Pos.CENTER);
 							
-							createOptionButtons();
+							group = new ToggleGroup();
+							button1 = new RadioButton();
+							button2 = new RadioButton();
+							button3 = new RadioButton();
+							button1.setToggleGroup(group);
+							button2.setToggleGroup(group);
+							button3.setToggleGroup(group);
+							
+							button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+							button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+							button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+							
+							button1.setSelected(true);
+							
+							pane = new GridPane();
+							pane.setAlignment(Pos.CENTER);
+							pane.setPadding(new Insets(20, 20, 20, 20));
+							pane.setHgap(100);
+							pane.add(button1, 0, 0);
+							pane.add(button2, 1, 0);
+							pane.add(button3, 2, 0);
 							
 							if(avatar.getGender().equalsIgnoreCase("male")) {
 								if(button1.isSelected()) { avatar.updateHair(0); }
@@ -308,30 +421,30 @@ public class Main extends Application{
 		
 	}
 	
-	public static void createOptionButtons() {
-		group = new ToggleGroup();
-		button1 = new RadioButton();
-		button2 = new RadioButton();
-		button3 = new RadioButton();
-		button1.setToggleGroup(group);
-		button2.setToggleGroup(group);
-		button3.setToggleGroup(group);
-		
-		button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
-		button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
-		button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
-		
-		button1.setSelected(true);
-		
-		pane = new GridPane();
-		pane.setAlignment(Pos.CENTER);
-		pane.setPadding(new Insets(20, 20, 20, 20));
-		pane.setHgap(100);
-		pane.add(button1, 0, 0);
-		pane.add(button2, 1, 0);
-		pane.add(button3, 2, 0);
-	}
-	
+//	public static void createOptionButtons() {
+//		group = new ToggleGroup();
+//		button1 = new RadioButton();
+//		button2 = new RadioButton();
+//		button3 = new RadioButton();
+//		button1.setToggleGroup(group);
+//		button2.setToggleGroup(group);
+//		button3.setToggleGroup(group);
+//		
+//		button1.setFont(Font.font(FAMILY, CHOICE_SIZE));
+//		button2.setFont(Font.font(FAMILY, CHOICE_SIZE));
+//		button3.setFont(Font.font(FAMILY, CHOICE_SIZE));
+//		
+//		button1.setSelected(true);
+//		
+//		pane = new GridPane();
+//		pane.setAlignment(Pos.CENTER);
+//		pane.setPadding(new Insets(20, 20, 20, 20));
+//		pane.setHgap(100);
+//		pane.add(button1, 0, 0);
+//		pane.add(button2, 1, 0);
+//		pane.add(button3, 2, 0);
+//	}
+//	
 	public static void main(String[] args) {
 		launch(args);
 	}
